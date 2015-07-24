@@ -3,6 +3,14 @@ import config
 import json
 import datetime
 import time
+import psycopg2
+
+db = psycopg2.connect("dbname=almond")
+c = db.cursor()
+c.execute("select * from users")
+db.commit()
+users = c.fetchall()
+print(users)
 
 def main():
 
