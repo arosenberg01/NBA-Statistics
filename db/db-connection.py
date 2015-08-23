@@ -8,8 +8,18 @@ Session = sessionmaker(bind=engine)
 # sqllite_engine = create_engine('sqlite:///:memory:', echo=True)
 Base = declarative_base()
 
+
+
+class Date(Base):
+    __tablename__ = 'dates'
+
+    id = Column(Integer, primary_key=True)
+    event_id = Column(String)
+
+
+
 class Event_Id(Base):
-    __tablename__ = 'event_dates'
+    __tablename__ = 'event_ids'
 
     id = Column(Integer, primary_key=True)
     event_id = Column(String)
