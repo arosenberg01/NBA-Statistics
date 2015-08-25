@@ -9,7 +9,13 @@ from scrapy.item import Item, Field
 
 class Player(Item):
     name = Field()
+    number = Field()
     team = Field()
     position = Field()
-    id = Field()
     stats = Field()
+
+class Game_Log(Item):
+    header = Field()
+    columns = Field()
+    reg_season_totals = Field()
+    reg_season_games = Field()
